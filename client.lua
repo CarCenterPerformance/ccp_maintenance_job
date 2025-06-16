@@ -7,15 +7,15 @@ local activePoints = {}
 local currentRepairBlips = {}
 
 local clothingSlots = {
-    tshirt_1 = 8,
-    tshirt_2 = 8,
-    torso_1 = 11,
-    torso_2 = 11,
-    arms = 3,
-    pants_1 = 4,
-    pants_2 = 4,
-    shoes_1 = 6,
-    shoes_2 = 6
+    tshirt_1 = nil,
+    tshirt_2 = nil,
+    torso_1 = nil,
+    torso_2 = nil,
+    arms = nil,
+    pants_1 = nil,
+    pants_2 = nil,
+    shoes_1 = nil,
+    shoes_2 = nil
 }
 
 -- NPC Setup
@@ -139,7 +139,7 @@ function applyWorkClothes(skin)
 
     for k, slot in pairs(clothingSlots) do
         local drawable = clothes[k] or 0
-        local textureKey = k .. "_2"
+        local textureKey = k .. "_1"
         local texture = clothes[textureKey] or 0
 
         local maxDrawable = GetNumberOfPedDrawableVariations(PlayerPedId(), slot) - 1
